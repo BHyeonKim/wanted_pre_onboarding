@@ -1,12 +1,14 @@
-import Toggle from './components/Toggle';
+import { Fragment } from 'react';
+import Tab from './components/Tab';
 
-import './App.css';
+import Toggle from './components/Toggle';
 
 function App() {
   return (
-    <div>
-      <Toggle />
-    </div>
+    <Fragment>
+      <Toggle className='center margin-vertical' />
+      <Tab className='center margin-vertical' />
+    </Fragment>
   );
 }
 

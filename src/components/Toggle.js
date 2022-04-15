@@ -17,9 +17,9 @@ const Toggle = (props) => {
 
   return (
     <div
-      className={`${classes.toggle} ${
-        isActive && classes.active
-      } center margin-vertical`}
+      className={`${classes.toggle} ${isActive && classes.active} ${
+        props.className
+      }`}
     >
       <div onClick={clickDefaultHandler} className={`${classes['toggle-btn']}`}>
         기본
