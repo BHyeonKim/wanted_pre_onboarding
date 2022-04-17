@@ -1,0 +1,52 @@
+.input {
+  background-color: rgb(252, 252, 252);
+  box-sizing: border-box;
+  width: 40rem;
+  height: 20rem;
+  padding: 2rem 0;
+}
+
+label {
+  display: block;
+  text-align: start;
+  width: 25rem;
+  margin: 0 auto;
+  margin-bottom: 0.2rem;
+}
+
+input {
+  display: block;
+  margin: 0 auto;
+  width: 25rem;
+  height: 3rem;
+  border: 1px solid rgb(230, 230, 230);
+  border-radius: 3px;
+}
+
+.email-wrapper {
+  position: relative;
+  margin-bottom: 4rem;
+}
+
+.check-mark {
+  position: absolute;
+  top: 2rem;
+  right: 8rem;
+  width: 2rem;
+  height: 2rem;
+  background-color: rgb(210, 210, 210);
+  border-radius: 1rem;
+  color: #fff;
+}
+
+.password-wrapper {
+  position: relative;
+}
+
+.eye {
+  position: absolute;
+  top: 2rem;
+  right: 8rem;
+  width: 2rem;
+  height: 2rem;
+}
