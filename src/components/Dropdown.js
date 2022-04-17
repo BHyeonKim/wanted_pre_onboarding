@@ -33,9 +33,9 @@ const Dropdown = (props) => {
     const keyword = event.target.value.toLowerCase();
     setSearchedItem(
       COINS.filter((coin) => coin.includes(keyword)).map((coin) => (
-        <div className={classes.option} key={coin}>
+        <li className={classes.option} key={coin}>
           {coin}
-        </div>
+        </li>
       ))
     );
   };
@@ -55,14 +55,16 @@ const Dropdown = (props) => {
           placeholder='Find Symbol'
           onChange={searchHandler}
         />
-        {searchedItem ||
-          COINS.map((coin) => {
-            return (
-              <div className={classes.option} key={coin}>
-                {coin}
-              </div>
-            );
-          })}
+        <ul>
+          {searchedItem ||
+            COINS.map((coin) => {
+              return (
+                <li className={classes.option} key={coin}>
+                  {coin}
+                </li>
+              );
+            })}
+        </ul>
       </div>
     </div>
   );
