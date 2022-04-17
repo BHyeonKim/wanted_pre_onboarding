@@ -1,4 +1,4 @@
-# Wanted pre onboarding 과제
+# 원티드 프리온보딩 코스
 
 ## Toggle.js
 
