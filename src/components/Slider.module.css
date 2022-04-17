@@ -26,11 +26,11 @@
 input[type='range'] {
   -webkit-appearance: none;
   appearance: none;
-
+  border: 0;
   width: 30rem;
   height: 1rem;
   border-radius: 1rem;
-  background-color: rgb(235, 235, 235);
+  background-color: #d5d4d3;
   z-index: 3;
 }
 
@@ -79,7 +79,7 @@ option:hover {
 
 .dots__dot {
   background-color: #d5d4d3;
-  margin-top: -1.5rem;
+  margin-top: -1.3rem;
   z-index: -1;
   width: 1.7rem;
   height: 1.7rem;
