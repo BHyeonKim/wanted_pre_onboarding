@@ -1,19 +1,20 @@
-import { useState } from 'react';
-import classes from './Slider.module.css';
+import PropTypes from 'prop-types'
+import { useState } from 'react'
+import classes from './Slider.module.css'
 
-const Slider = (props) => {
-  const [value, setValue] = useState(1);
+function Slider({ className }) {
+  const [value, setValue] = useState(1)
 
   const valueChangeHandler = (event) => {
-    setValue(event.target.value);
-  };
+    setValue(event.target.value)
+  }
 
   const optionHandler = (event) => {
-    setValue(event.target.value);
-  };
+    setValue(event.target.value)
+  }
 
   return (
-    <div className={`${props.className} ${classes['slider__wrapper']}`}>
+    <div className={`${className} ${classes.slider__wrapper}`}>
       <div className={`${classes.result}`}>{value}%</div>
       <input
         type='range'
@@ -28,36 +29,31 @@ const Slider = (props) => {
         }}
       />
       <div className={classes.dots}>
-        <div
-          className={classes.dots__dot}
-          style={{ backgroundColor: 'rgb(20, 175, 175)' }}
-        ></div>
+        <div className={classes.dots__dot} style={{ backgroundColor: 'rgb(20, 175, 175)' }} />
         <div
           className={classes.dots__dot}
           style={{
             backgroundColor: `${value >= 25 ? 'rgb(20, 175, 175)' : '#d5d4d3'}`,
           }}
-        ></div>
+        />
         <div
           className={classes.dots__dot}
           style={{
             backgroundColor: `${value >= 50 ? 'rgb(20, 175, 175)' : '#d5d4d3'}`,
           }}
-        ></div>
+        />
         <div
           className={classes.dots__dot}
           style={{
             backgroundColor: `${value >= 75 ? 'rgb(20, 175, 175)' : '#d5d4d3'}`,
           }}
-        ></div>
+        />
         <div
           className={classes.dots__dot}
           style={{
-            backgroundColor: `${
-              value >= 100 ? 'rgb(20, 175, 175)' : '#d5d4d3'
-            }`,
+            backgroundColor: `${value >= 100 ? 'rgb(20, 175, 175)' : '#d5d4d3'}`,
           }}
-        ></div>
+        />
       </div>
       <datalist id='marks'>
         <option value={1} label='1%' onClick={optionHandler}>
@@ -77,7 +73,11 @@ const Slider = (props) => {
         </option>
       </datalist>
     </div>
-  );
-};
+  )
+}
 
-export default Slider;
+Slider.propTypes = {
+  className: PropTypes.string,
+}
+
+export default Slider

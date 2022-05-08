@@ -1,0 +1,40 @@
+@use '../styles/constants/colors' as color;
+
+.toggle {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  width: 40rem;
+  height: 8rem;
+  background-color: rgba(81, 70, 70, 30%);
+  border-radius: 4rem;
+
+  &__btn {
+    width: 18rem;
+    height: 6rem;
+    margin: 1rem;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 6rem;
+    color: color.$BLACK;
+    vertical-align: center;
+    cursor: pointer;
+    border-radius: 3rem;
+  }
+}
+
+.switch {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: -1;
+  width: 18rem;
+  height: 6rem;
+  background-color: rgba(color.$BLACK, 30%);
+  border-radius: 3rem;
+  transition: all 0.4s ease-in-out;
+}
+
+.active .switch {
+  transform: translateX(20rem);
+}

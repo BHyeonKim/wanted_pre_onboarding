@@ -1,56 +1,56 @@
 .slider__wrapper {
-  background-color: transparent;
+  z-index: -3;
   box-sizing: border-box;
   width: 40rem;
   height: 20rem;
   padding-top: 5rem;
-  z-index: -3;
+  background-color: transparent;
 }
 
 .result {
   box-sizing: inherit;
-  text-align: end;
-  line-height: 2rem;
-  font-size: 2rem;
-  color: rgb(173, 173, 173);
-  padding: 1rem;
   width: 28rem;
   height: 4rem;
+  padding: 1rem;
   margin: 0 auto;
   margin-bottom: 2rem;
+  font-size: 2rem;
+  line-height: 2rem;
+  color: rgb(173, 173, 173);
+  text-align: end;
   background-color: rgb(249, 249, 249);
   border: 0.1rem solid rgb(235, 235, 235);
   border-radius: 0.4rem;
 }
 
 input[type='range'] {
-  -webkit-appearance: none;
-  appearance: none;
-  border: 0;
+  z-index: 3;
   width: 30rem;
   height: 1rem;
-  border-radius: 1rem;
   background-color: #d5d4d3;
-  z-index: 3;
+  border: 0;
+  border-radius: 1rem;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 input[type='range']::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  background-color: rgb(20, 175, 175);
   width: 2rem;
   height: 2rem;
   margin-top: -1rem;
-  outline: none;
-  border: 0.15rem solid #fff;
+  background-color: rgb(20, 175, 175);
+  border: 0.15rem solid #ffffff;
   border-radius: 1rem;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  outline: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 30%);
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 datalist {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   margin: 1rem 5rem;
 }
 
@@ -59,16 +59,16 @@ option {
   width: 3rem;
   height: 1.5rem;
   font-weight: bold;
-  color: rgb(173, 173, 173);
   line-height: 1.5rem;
-  border-radius: 1.5rem;
+  color: rgb(173, 173, 173);
   background-color: rgb(235, 235, 235);
+  border-radius: 1.5rem;
 }
 
 option:hover {
-  background-color: rgb(20, 175, 175);
   color: white;
   cursor: pointer;
+  background-color: rgb(20, 175, 175);
 }
 
 .dots {
@@ -78,10 +78,10 @@ option:hover {
 }
 
 .dots__dot {
-  background-color: #d5d4d3;
-  margin-top: -1.3rem;
   z-index: -1;
   width: 1.7rem;
   height: 1.7rem;
+  margin-top: -1.3rem;
+  background-color: #d5d4d3;
   border-radius: 1rem;
 }

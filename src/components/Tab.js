@@ -1,37 +1,33 @@
-import { useState } from 'react';
-import classes from './Tab.module.css';
+import { useState } from 'react'
+import classes from './Tab.module.scss'
 
-const Tab = (props) => {
-  const [selectedItem, setSelectedItem] = useState('first');
+function Tab() {
+  const [selectedItem, setSelectedItem] = useState('first')
 
   const selectFirstHandler = () => {
-    setSelectedItem('first');
-  };
+    setSelectedItem('first')
+  }
   const selectSecondHandler = () => {
-    setSelectedItem('second');
-  };
+    setSelectedItem('second')
+  }
   const selectThirdHandler = () => {
-    setSelectedItem('third');
-  };
+    setSelectedItem('third')
+  }
 
   return (
-    <div
-      className={`${props.className} ${classes.tab} ${
-        classes[`${selectedItem}`]
-      }`}
-    >
-      <div className={`${classes.item}`} onClick={selectFirstHandler}>
+    <div className={`${classes.tab} ${classes[`${selectedItem}`]}`}>
+      <button type='button' className={`${classes.tab__item}`} onClick={selectFirstHandler}>
         감자
-      </div>
-      <div className={`${classes.item}`} onClick={selectSecondHandler}>
+      </button>
+      <button type='button' className={`${classes.tab__item}`} onClick={selectSecondHandler}>
         고구마
-      </div>
-      <div className={`${classes.item}`} onClick={selectThirdHandler}>
+      </button>
+      <button type='button' className={`${classes.tab__item}`} onClick={selectThirdHandler}>
         카레라이스
-      </div>
-      <div className={classes.bar}></div>
+      </button>
+      <div className={classes.bar} />
     </div>
-  );
-};
+  )
+}
 
-export default Tab;
+export default Tab

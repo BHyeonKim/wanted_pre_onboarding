@@ -1,60 +1,50 @@
-import { useState } from 'react';
+import PropTypes from 'prop-types'
+import { useState } from 'react'
 
-import classes from './Dropdown.module.css';
+import classes from './Dropdown.module.scss'
 
-const COINS = [
-  'bitcoin',
-  'ethereum',
-  'bitcoin cash',
-  'litecoin',
-  'ripple',
-  'monero',
-  'dash',
-];
+const COINS = ['bitcoin', 'ethereum', 'bitcoin cash', 'litecoin', 'ripple', 'monero', 'dash']
 
-const Dropdown = (props) => {
-  const [isClicked, setIsClicked] = useState(false);
-  const [selectedItem, setSelectedItem] = useState(''); // 선택한 아이템
-  const [searchedItem, setSearchedItem] = useState(''); // 검색어
+function Dropdown({ className }) {
+  const [isClicked, setIsClicked] = useState(false)
+  const [selectedItem, setSelectedItem] = useState('') // 선택한 아이템
+  const [searchedItem, setSearchedItem] = useState('') // 검색어
 
   const dropdownHandler = (_) => {
     setIsClicked((prev) => {
-      return !prev;
-    });
-  };
+      return !prev
+    })
+  }
 
   const selectItemHandler = (event) => {
     if (event.target.localName === 'div') {
-      setSelectedItem(event.target.innerText);
+      setSelectedItem(event.target.innerText)
     }
-  };
+  }
 
   const searchHandler = (event) => {
-    const keyword = event.target.value.toLowerCase();
+    const keyword = event.target.value.toLowerCase()
     setSearchedItem(
       COINS.filter((coin) => coin.includes(keyword)).map((coin) => (
         <li className={classes.option} key={coin}>
           {coin}
         </li>
       ))
-    );
-  };
+    )
+  }
 
   return (
-    <div className={`${classes.dropdown} ${props.className}`}>
-      <button className={classes.btn} onClick={dropdownHandler}>
+    <div className={`${classes.dropdown} ${className}`}>
+      <button type='button' className={classes.btn} onClick={dropdownHandler}>
         {selectedItem || '아이템을 선택하세요'}
       </button>
       <div
+        role='presentation'
         onClick={selectItemHandler}
         className={classes.options}
         style={{ display: `${isClicked ? 'block' : 'none'}` }}
       >
-        <input
-          className={`${classes.option} ${classes.input}`}
-          placeholder='Find Symbol'
-          onChange={searchHandler}
-        />
+        <input className={`${classes.option} ${classes.input}`} placeholder='Find Symbol' onChange={searchHandler} />
         <ul>
           {searchedItem ||
             COINS.map((coin) => {
@@ -62,12 +52,16 @@ const Dropdown = (props) => {
                 <li className={classes.option} key={coin}>
                   {coin}
                 </li>
-              );
+              )
             })}
         </ul>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Dropdown;
+Dropdown.propTypes = {
+  className: PropTypes.string,
+}
+
+export default Dropdown

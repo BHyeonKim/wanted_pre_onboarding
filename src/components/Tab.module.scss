@@ -1,0 +1,51 @@
+@use '../styles/constants/colors' as color;
+
+.tab {
+  position: relative;
+  display: flex;
+  width: 60rem;
+  height: 5rem;
+  border-bottom: 0.5rem solid rgb(215, 215, 215);
+
+  &__item {
+    width: 20rem;
+    height: 5rem;
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 5rem;
+    color: rgba(10, 11, 11, 33%);
+    vertical-align: center;
+    cursor: pointer;
+  }
+}
+
+.bar {
+  position: absolute;
+  top: 4.5rem;
+  left: 1rem;
+  width: 19rem;
+  height: 0.5rem;
+  background-color: color.$BLACK;
+  transition: all 0.4s ease-in-out;
+}
+
+.second .bar {
+  transform: translateX(20rem);
+}
+
+.third .bar {
+  width: 19rem;
+  transform: translateX(39rem);
+}
+
+.first .item:nth-child(1) {
+  color: color.$BLACK;
+}
+
+.second .item:nth-child(2) {
+  color: color.$BLACK;
+}
+
+.third .item:nth-child(3) {
+  color: color.$BLACK;
+}

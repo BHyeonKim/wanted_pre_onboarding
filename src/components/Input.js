@@ -1,15 +1,19 @@
-import { useState } from 'react';
+import PropTypes from 'prop-types'
 
-import classes from './Input.module.css';
+import { useState } from 'react'
 
-const Input = (props) => {
-  const [email, setEmail] = useState('');
-  const [isVisible, setIsVisible] = useState(false);
+import classes from './Input.module.css'
+
+import { EyeOn, EyeOff, Check } from '../assets/svgs'
+
+function Input({ className }) {
+  const [email, setEmail] = useState('')
+  const [isVisible, setIsVisible] = useState(false)
 
   const emailChangeHandler = (event) => {
-    const enteredEmail = event.target.value;
+    const enteredEmail = event.target.value
     if (enteredEmail.includes('@')) {
-      const [user, provider] = enteredEmail.split('@');
+      const [user, provider] = enteredEmail.split('@')
       if (
         user.length !== 0 &&
         provider.length !== 0 &&
@@ -17,60 +21,46 @@ const Input = (props) => {
         provider.split('.')[0].length !== 0 &&
         provider.split('.')[1].length !== 0
       ) {
-        setEmail(enteredEmail);
+        setEmail(enteredEmail)
       } else {
-        setEmail('');
+        setEmail('')
       }
     } else {
-      setEmail('');
+      setEmail('')
     }
-  };
+  }
 
   const passwordVisibleHandler = (_) => {
     setIsVisible((prev) => {
-      return !prev;
-    });
-  };
+      return !prev
+    })
+  }
 
   return (
-    <div className={`${classes.input} ${props.className}`}>
+    <div className={`${classes.input} ${className}`}>
       <div className={classes['email-wrapper']}>
         <label htmlFor='email'>E-mail</label>
-        <input
-          type='email'
-          id='email'
-          placeholder='E-mail'
-          onChange={emailChangeHandler}
-          required
-        />
-        <img
-          alt='check'
-          src='/checkmark-outline.svg'
+        <input type='email' id='email' placeholder='E-mail' onChange={emailChangeHandler} required />
+        <Check
           className={classes['check-mark']}
           style={{
-            backgroundColor: `${
-              email ? 'rgb(20, 175, 175)' : 'rgb(210, 210, 210)'
-            }`,
+            backgroundColor: `${email ? 'rgb(20, 175, 175)' : 'rgb(210, 210, 210)'}`,
           }}
         />
       </div>
       <div className={classes['password-wrapper']}>
         <label htmlFor='password'>password</label>
-        <input
-          type={isVisible ? 'text' : 'password'}
-          id='password'
-          placeholder='Password'
-          required
-        />
-        <img
-          alt='eye'
-          src={isVisible ? '/eye-outline.svg' : '/eye-off-outline.svg'}
-          className={classes.eye}
-          onClick={passwordVisibleHandler}
-        />
+        <input type={isVisible ? 'text' : 'password'} id='password' placeholder='Password' required />
+        <button type='button' alt='eye' className={classes.eye} onClick={passwordVisibleHandler}>
+          {isVisible ? <EyeOn /> : <EyeOff />}
+        </button>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Input;
+Input.propTypes = {
+  className: PropTypes.string,
+}
+
+export default Input

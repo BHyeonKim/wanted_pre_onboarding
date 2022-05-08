@@ -1,35 +1,29 @@
-import { useState } from 'react';
+import { useState } from 'react'
 
-import classes from './Toggle.module.css';
+import classes from './Toggle.module.scss'
 
-const Toggle = (props) => {
-  const [isActive, setIsActive] = useState(false);
+function Toggle() {
+  const [isActive, setIsActive] = useState(false)
 
   const clickDefaultHandler = () => {
-    setIsActive(false);
-    console.log('default');
-  };
+    setIsActive(false)
+  }
 
   const clickDetailHandler = () => {
-    setIsActive(true);
-    console.log('active');
-  };
+    setIsActive(true)
+  }
 
   return (
-    <div
-      className={`${classes.toggle} ${isActive && classes.active} ${
-        props.className
-      }`}
-    >
-      <div onClick={clickDefaultHandler} className={`${classes['toggle-btn']}`}>
+    <div className={`${classes.toggle} ${isActive && classes.active}`}>
+      <button type='button' onClick={clickDefaultHandler} className={`${classes.toggle__btn}`}>
         기본
-      </div>
-      <div className={classes.switch}></div>
-      <div onClick={clickDetailHandler} className={`${classes['toggle-btn']}`}>
+      </button>
+      <div className={classes.switch} />
+      <button type='button' onClick={clickDetailHandler} className={`${classes.toggle__btn}`}>
         상세
-      </div>
+      </button>
     </div>
-  );
-};
+  )
+}
 
-export default Toggle;
+export default Toggle
