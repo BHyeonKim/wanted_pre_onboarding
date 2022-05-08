@@ -24,9 +24,18 @@ function Slider({ className }) {
         onChange={valueChangeHandler}
         value={value}
         list='marks'
-        style={{
-          background: `linear-gradient(to right, rgb(20, 175, 175) 0%, rgb(20, 175, 175)  ${value}%, #d5d4d3  ${value}%, #d5d4d3 100%)`,
+        ref={(el) => {
+          if (el) {
+            el.style.setProperty(
+              'background',
+              `linear-gradient(to right, rgb(20, 175, 175) 0%, rgb(20, 175, 175)  ${value}%, #d5d4d3  ${value}%, #d5d4d3 100%)`,
+              'important'
+            )
+          }
         }}
+        // style={{
+        //   background: `linear-gradient(to right, rgb(20, 175, 175) 0%, rgb(20, 175, 175)  ${value}%, #d5d4d3  ${value}%, #d5d4d3 100%)`,
+        // }}
       />
       <div className={classes.dots}>
         <div className={classes.dots__dot} style={{ backgroundColor: 'rgb(20, 175, 175)' }} />

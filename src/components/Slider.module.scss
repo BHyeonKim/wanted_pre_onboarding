@@ -28,7 +28,7 @@ input[type='range'] {
   z-index: 3;
   width: 30rem;
   height: 1rem;
-  background-color: #d5d4d3 !important;
+  background-color: color.$SLIDER_GREY !important;
   border: 0;
   border-radius: 1rem;
   -webkit-appearance: none;
@@ -39,7 +39,8 @@ input[type='range']::-webkit-slider-thumb {
   width: 2rem;
   height: 2rem;
   margin-top: -0.4rem;
-  background-color: rgb(20, 175, 175);
+  cursor: pointer;
+  background-color: color.$SLIDER_GREEN;
   border: 0.15rem solid color.$WHITE;
   border-radius: 1rem;
   outline: none;
@@ -82,7 +83,7 @@ option:hover {
     width: 1.7rem;
     height: 1.7rem;
     margin-top: -1.3rem;
-    background-color: #d5d4d3;
+    background-color: color.$SLIDER_GREY;
     border-radius: 1rem;
   }
 }
