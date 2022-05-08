@@ -17,9 +17,7 @@ function Dropdown({ className }) {
   }
 
   const selectItemHandler = (event) => {
-    if (event.target.localName === 'div') {
-      setSelectedItem(event.target.innerText)
-    }
+    setSelectedItem(event.target.innerText)
   }
 
   const searchHandler = (event) => {
@@ -49,9 +47,9 @@ function Dropdown({ className }) {
           {searchedItem ||
             COINS.map((coin) => {
               return (
-                <li className={classes.option} key={coin}>
+                <button type='button' className={classes.option} key={coin}>
                   {coin}
-                </li>
+                </button>
               )
             })}
         </ul>

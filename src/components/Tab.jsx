@@ -1,7 +1,8 @@
+import PropTypes from 'prop-types'
 import { useState } from 'react'
 import classes from './Tab.module.scss'
 
-function Tab() {
+function Tab({ className }) {
   const [selectedItem, setSelectedItem] = useState('first')
 
   const selectFirstHandler = () => {
@@ -15,7 +16,7 @@ function Tab() {
   }
 
   return (
-    <div className={`${classes.tab} ${classes[`${selectedItem}`]}`}>
+    <div className={`${className} ${classes.tab} ${classes[`${selectedItem}`]}`}>
       <button type='button' className={`${classes.tab__item}`} onClick={selectFirstHandler}>
         감자
       </button>
@@ -28,6 +29,10 @@ function Tab() {
       <div className={classes.bar} />
     </div>
   )
+}
+
+Tab.propTypes = {
+  className: PropTypes.string,
 }
 
 export default Tab

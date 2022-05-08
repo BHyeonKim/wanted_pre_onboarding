@@ -1,4 +1,5 @@
-import styles from './Routes.module.scss'
+/* eslint-disable react/jsx-fragments */
+import { Fragment } from 'react'
 
 import Toggle from '../components/Toggle'
 import Tab from '../components/Tab'
@@ -8,13 +9,13 @@ import Dropdown from '../components/Dropdown'
 
 function App() {
   return (
-    <div className={styles.app}>
-      <Toggle className='center' />
-      <Tab className='center' />
-      <Input className='center' />
-      <Slider className='center' />
-      <Dropdown className='center' />
-    </div>
+    <Fragment>
+      <Toggle className='center margin' />
+      <Tab className='center margin' />
+      <Slider className='center margin' />
+      <Input className='center margin' />
+      <Dropdown className='center margin' />
+    </Fragment>
   )
 }
 

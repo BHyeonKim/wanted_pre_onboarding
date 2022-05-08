@@ -1,3 +1,5 @@
+@use '../styles/constants/colors' as color;
+
 .input {
   box-sizing: border-box;
   width: 40rem;
@@ -23,29 +25,29 @@ input {
   border-radius: 3px;
 }
 
-.email-wrapper {
+.email {
   position: relative;
   margin-bottom: 4rem;
 }
 
-.check-mark {
+.check {
   position: absolute;
-  top: 2rem;
+  top: 1.7rem;
   right: 8rem;
   width: 2rem;
   height: 2rem;
-  color: #ffffff;
+  color: color.$WHITE;
   background-color: rgb(210, 210, 210);
   border-radius: 1rem;
 }
 
-.password-wrapper {
+.password {
   position: relative;
 }
 
 .eye {
   position: absolute;
-  top: 2rem;
+  top: 1.7rem;
   right: 8rem;
   width: 2rem;
   height: 2rem;

@@ -1,8 +1,9 @@
+import PropTypes from 'prop-types'
 import { useState } from 'react'
 
 import classes from './Toggle.module.scss'
 
-function Toggle() {
+function Toggle({ className }) {
   const [isActive, setIsActive] = useState(false)
 
   const clickDefaultHandler = () => {
@@ -14,7 +15,7 @@ function Toggle() {
   }
 
   return (
-    <div className={`${classes.toggle} ${isActive && classes.active}`}>
+    <div className={`${className} ${classes.toggle} ${isActive && classes.active}`}>
       <button type='button' onClick={clickDefaultHandler} className={`${classes.toggle__btn}`}>
         기본
       </button>
@@ -24,6 +25,10 @@ function Toggle() {
       </button>
     </div>
   )
+}
+
+Toggle.propTypes = {
+  className: PropTypes.string,
 }
 
 export default Toggle

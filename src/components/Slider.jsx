@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import { useState } from 'react'
-import classes from './Slider.module.css'
+import classes from './Slider.module.scss'
 
 function Slider({ className }) {
   const [value, setValue] = useState(1)
@@ -14,7 +14,7 @@ function Slider({ className }) {
   }
 
   return (
-    <div className={`${className} ${classes.slider__wrapper}`}>
+    <div className={`${className} ${classes.wrapper}`}>
       <div className={`${classes.result}`}>{value}%</div>
       <input
         type='range'
